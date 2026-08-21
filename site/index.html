@@ -3,14 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sad Pod Wiatrakiem — wiśnie i brzoskwinie z Golęczewa</title>
-<meta name="description" content="Rodzinny sad wiśniowo-brzoskwiniowy w Golęczewie pod Poznaniem. Trzy odmiany wiśni i pięć odmian brzoskwiń. Sprzedaż bezpośrednia prosto z sadu. ul. Tysiąclecia 25, tel. 500 326 588.">
-<meta property="og:title" content="Sad Pod Wiatrakiem — wiśnie i brzoskwinie z Golęczewa">
-<meta property="og:description" content="Rodzinny sad wiśniowo-brzoskwiniowy w Golęczewie pod Poznaniem. Owoce prosto z drzewa — trzy odmiany wiśni i pięć odmian brzoskwiń.">
+<title>Sad Pod Wiatrakiem — wiśnie i brzoskwinie z Golęczewa pod Poznaniem</title>
+<meta name="description" content="Rodzinny sad wiśniowo-brzoskwiniowy w Golęczewie, 15 minut od Poznania. Osiem odmian, zbiór tego samego dnia. Otwarte niedziela–piątek 16:00–19:00. tel. 500 326 588.">
+<meta name="theme-color" content="#96161C">
+<link rel="canonical" href="https://naxvb.github.io/sad-web/">
+<meta property="og:title" content="Sad Pod Wiatrakiem — wiśnie i brzoskwinie prosto z sadu">
+<meta property="og:description" content="Golęczewo, 15 minut od Poznania. Trzy odmiany wiśni, pięć odmian brzoskwiń. Zrywamy rano, sprzedajemy po południu. Otwarte niedziela–piątek 16:00–19:00.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:url" content="https://naxvb.github.io/sad-web/">
+<meta property="og:image" content="https://naxvb.github.io/sad-web/img/brzoskwinia-na-drzewie-1600.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍒</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="img/brzoskwinia-na-drzewie-800.jpg" imagesrcset="img/brzoskwinia-na-drzewie-800.jpg 800w, img/brzoskwinia-na-drzewie-1600.jpg 1600w" imagesizes="100vw">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -28,55 +35,75 @@
   --shadow:0 18px 40px -24px rgba(44,33,27,.5);
   --r:18px;
   --wrap:1160px;
+  --bar:0px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;background:var(--cream);color:var(--ink);
   font-family:'Karla','Helvetica Neue',Arial,sans-serif;
-  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
+  font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;padding-bottom:var(--bar);
 }
 h1,h2,h3,.display{font-family:'Fraunces',Georgia,'Times New Roman',serif;font-weight:600;line-height:1.08;letter-spacing:-.015em;margin:0}
 p{margin:0 0 1em}
 a{color:inherit}
-img{max-width:100%}
-.wrap{width:min(100% - 2.5rem,var(--wrap));margin-inline:auto}
+/* height:auto neutralises the width/height attributes, which are presentational
+   hints and would otherwise beat aspect-ratio and render images at full source size */
+img{max-width:100%;display:block;height:auto}
+.wrap{width:min(100% - 2.2rem,var(--wrap));margin-inline:auto}
 .eyebrow{
-  font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;
-  color:var(--cherry);display:flex;align-items:center;gap:.7rem;margin-bottom:1rem;
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
+  color:var(--cherry);display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;
 }
-.eyebrow::before{content:"";width:34px;height:1px;background:var(--cherry);opacity:.5}
-.center .eyebrow{justify-content:center}
-section{padding:clamp(4rem,9vw,7.5rem) 0;position:relative}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor;opacity:.5;flex:0 0 auto}
+section{padding:clamp(2.6rem,7vw,6rem) 0;position:relative}
+.section-title{font-size:clamp(1.8rem,4.4vw,3rem);margin-bottom:.9rem}
+.lead{font-size:1.05rem;color:var(--ink-soft)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;z-index:200;background:#fff;padding:.7rem 1rem;border-radius:10px}
 
 /* ---------- buttons ---------- */
 .btn{
-  display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.6rem;border-radius:999px;
-  font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid transparent;
-  transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease;white-space:nowrap;
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.85rem 1.5rem;border-radius:999px;
+  font-weight:700;font-size:.95rem;text-decoration:none;border:1.5px solid transparent;cursor:pointer;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease;
 }
 .btn-primary{background:var(--cherry);color:#fff;box-shadow:0 10px 24px -12px rgba(150,22,28,.8)}
 .btn-primary:hover{background:var(--cherry-dk);transform:translateY(-2px)}
 .btn-ghost{border-color:rgba(44,33,27,.28);color:var(--ink)}
 .btn-ghost:hover{background:rgba(44,33,27,.06);transform:translateY(-2px)}
+.btn-light{background:rgba(255,255,255,.94);color:var(--ink)}
+.btn-light:hover{background:#fff;transform:translateY(-2px)}
+
+/* ---------- status pill ---------- */
+.pill{
+  display:inline-flex;align-items:center;gap:.55rem;border-radius:999px;padding:.45rem .95rem;
+  font-size:.85rem;font-weight:700;background:rgba(255,255,255,.9);color:var(--ink);
+  border:1px solid rgba(44,33,27,.1);
+}
+.pill .dot{width:9px;height:9px;border-radius:50%;background:var(--leaf);flex:0 0 auto;position:relative}
+.pill.is-open .dot{background:#3F8B3F;box-shadow:0 0 0 4px rgba(63,139,63,.22)}
+.pill.is-soon .dot{background:var(--peach);box-shadow:0 0 0 4px rgba(227,154,69,.24)}
+.pill.is-closed .dot{background:#B44B2A;box-shadow:0 0 0 4px rgba(180,75,42,.2)}
+.pill.is-off .dot{background:#8A7A6C;box-shadow:0 0 0 4px rgba(138,122,108,.2)}
 
 /* ---------- header ---------- */
 header{
   position:sticky;top:0;z-index:60;backdrop-filter:blur(10px);
-  background:rgba(250,244,233,.82);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s;
+  background:rgba(250,244,233,.9);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s;
 }
 header.stuck{border-color:var(--line);box-shadow:0 10px 30px -26px rgba(44,33,27,.7)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.7rem 0}
-.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none}
-.brand-mark{width:52px;height:52px;flex:0 0 auto}
-.brand-txt strong{font-family:'Fraunces',serif;font-size:1.06rem;display:block;line-height:1.1}
-.brand-txt span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
-.nav-links{display:flex;align-items:center;gap:1.9rem;list-style:none;margin:0;padding:0}
-.nav-links a{text-decoration:none;font-size:.94rem;font-weight:500;position:relative;padding-block:.3rem}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.55rem 0}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand-mark{width:46px;height:46px;flex:0 0 auto}
+.brand-txt strong{font-family:'Fraunces',serif;font-size:1rem;display:block;line-height:1.1}
+.brand-txt span{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.nav-links{display:flex;align-items:center;gap:1.6rem;list-style:none;margin:0;padding:0}
+.nav-links a{text-decoration:none;font-size:.93rem;font-weight:500;position:relative;padding-block:.3rem}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--cherry);transition:width .25s}
 .nav-links a:hover::after{width:100%}
-.nav-cta{display:flex;align-items:center;gap:.8rem}
+.nav-cta{display:flex;align-items:center;gap:.7rem}
 .burger{display:none;background:none;border:0;padding:.4rem;cursor:pointer}
 .burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.25s}
 .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -84,159 +111,285 @@ header.stuck{border-color:var(--line);box-shadow:0 10px 30px -26px rgba(44,33,27
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 /* ---------- hero ---------- */
-.hero{padding:0;overflow:hidden;background:linear-gradient(180deg,#FCF6EC 0%,#F7EBD9 55%,#F1E2CB 100%)}
-.hero-inner{position:relative;min-height:min(88vh,760px);display:flex;align-items:center;padding:clamp(3.5rem,8vw,6rem) 0 clamp(9rem,16vw,12rem)}
-.hero-art{position:absolute;inset:auto 0 0 0;width:100%;height:auto;display:block;pointer-events:none}
-.hero-copy{position:relative;z-index:2;max-width:660px}
-.hero h1{font-size:clamp(2.7rem,7.2vw,5rem);margin-bottom:1.2rem}
-.hero h1 em{font-style:italic;color:var(--cherry)}
-.hero-lead{font-size:clamp(1.05rem,2vw,1.28rem);color:var(--ink-soft);max-width:52ch;margin-bottom:2rem}
-.hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;align-items:center}
-.hero-note{margin-top:1.6rem;font-size:.88rem;color:var(--ink-soft);display:flex;align-items:center;gap:.5rem}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--leaf);box-shadow:0 0 0 4px rgba(78,106,67,.18);flex:0 0 auto}
+.hero{padding:0;position:relative;isolation:isolate;background:#3A2A20}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(100deg,rgba(30,20,14,.9) 0%,rgba(30,20,14,.72) 42%,rgba(30,20,14,.22) 72%,rgba(30,20,14,.05) 100%);
+}
+.hero-inner{position:relative;min-height:min(84vh,720px);display:flex;align-items:center;padding:clamp(3rem,7vw,5rem) 0 clamp(2.4rem,6vw,4.5rem)}
+.hero-copy{max-width:640px;color:#FFF8ED}
+.hero .eyebrow{color:var(--peach-lt)}
+.hero h1{font-size:clamp(2.3rem,7vw,4.6rem);margin-bottom:.9rem;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero h1 em{font-style:italic;color:var(--peach-lt)}
+.hero-lead{font-size:clamp(1rem,1.9vw,1.22rem);color:rgba(255,248,237,.9);max-width:50ch;margin-bottom:1.4rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin-bottom:1.2rem}
+.hero .pill{background:rgba(255,252,246,.94)}
+.hero-hours{margin:.9rem 0 0;font-size:.9rem;color:rgba(255,248,237,.88)}
 
 /* ---------- facts bar ---------- */
-.facts{background:var(--cherry);color:#fff;position:relative;z-index:3;margin-top:-1px}
-.facts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.18)}
-.fact{background:var(--cherry);padding:2rem 1.6rem;display:flex;flex-direction:column;gap:.35rem}
-.fact b{font-family:'Fraunces',serif;font-size:1.22rem;font-weight:600}
-.fact span{font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;opacity:.75}
-.fact p{margin:0;font-size:.95rem;opacity:.92}
+.facts{background:var(--cherry);color:#fff;position:relative;z-index:3}
+.facts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.2)}
+.fact{background:var(--cherry);padding:1.5rem 1.4rem;display:flex;flex-direction:column;gap:.22rem}
+.fact b{font-family:'Fraunces',serif;font-size:1.16rem;font-weight:600}
+.fact b a{text-decoration:none}
+.fact span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;opacity:.72}
+.fact p{margin:0;font-size:.9rem;opacity:.9}
 
-/* ---------- about ---------- */
-.two-col{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.5rem,6vw,5rem);align-items:center}
-.section-title{font-size:clamp(2rem,4.4vw,3.1rem);margin-bottom:1.2rem}
-.lead{font-size:1.08rem;color:var(--ink-soft)}
-.signature{font-family:'Fraunces',serif;font-style:italic;font-size:1.2rem;color:var(--cherry);margin-top:1.5rem}
-.frame{
-  position:relative;border-radius:var(--r);overflow:hidden;background:var(--cream-2);
-  box-shadow:var(--shadow);aspect-ratio:4/5;
+/* ---------- teraz w sadzie ---------- */
+.now-card{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--r);
+  padding:clamp(1.4rem,3vw,2.2rem);box-shadow:var(--shadow);
 }
-.frame svg{width:100%;height:100%;display:block}
-.frame-cap{
-  position:absolute;left:1rem;bottom:1rem;right:1rem;background:rgba(255,252,246,.9);backdrop-filter:blur(4px);
-  border-radius:12px;padding:.7rem .9rem;font-size:.8rem;color:var(--ink-soft);
+.now-head{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;margin-bottom:.9rem}
+.now-head h2{font-size:clamp(1.5rem,3.4vw,2.2rem)}
+.now-text{color:var(--ink-soft);margin:0 0 1.1rem;max-width:60ch}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.4rem}
+.chip{
+  font-size:.85rem;font-weight:700;padding:.4rem .85rem;border-radius:999px;
+  background:rgba(150,22,28,.09);color:var(--cherry);
 }
-.stat-row{display:flex;gap:2.5rem;margin-top:2.2rem;flex-wrap:wrap}
-.stat b{display:block;font-family:'Fraunces',serif;font-size:2.1rem;color:var(--cherry);line-height:1}
-.stat span{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.chip.pe{background:rgba(227,154,69,.18);color:#A9631C}
+.chip.mute{background:rgba(44,33,27,.07);color:var(--ink-soft)}
+
+/* compact season calendar */
+.cal{display:grid;gap:.5rem}
+.cal-row{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:.7rem}
+.cal-row .lbl{font-size:.85rem;font-weight:700;min-width:88px}
+.months{display:grid;grid-template-columns:repeat(12,1fr);gap:3px}
+.mo{
+  height:22px;border-radius:5px;background:rgba(44,33,27,.07);
+  display:grid;place-items:center;font-size:.58rem;letter-spacing:-.02em;
+  text-transform:uppercase;color:rgba(44,33,27,.42);font-weight:700;
+}
+.mo.on{background:linear-gradient(180deg,#A82228,var(--cherry));color:#fff}
+.mo.on.pe{background:linear-gradient(180deg,#EDA751,#D9832F);color:#fff}
+.mo.now{outline:2px solid var(--ink);outline-offset:1px}
+.cal-note{margin:1rem 0 0;font-size:.85rem;color:var(--ink-soft)}
 
 /* ---------- fruit cards ---------- */
 .band-paper{background:var(--paper)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.6rem;margin-top:3rem}
-.card{
-  background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:2rem;
-  display:flex;flex-direction:column;gap:.6rem;transition:transform .3s ease,box-shadow .3s ease;position:relative;overflow:hidden;
+.fruits{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:1.4rem;margin-top:1.8rem}
+.fruit{
+  background:var(--cream);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease;
 }
-.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.card .ic{width:64px;height:64px;margin-bottom:.6rem}
-.card h3{font-size:1.42rem}
-.card .when{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cherry);font-weight:700}
-.card p{color:var(--ink-soft);font-size:.97rem;margin:0}
-.card.soon{background:linear-gradient(160deg,#FFF7EA,#F7E9D2)}
+.fruit:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.fruit img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.fruit-body{padding:1.4rem 1.4rem 1.6rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+.fruit .when{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--cherry);font-weight:700}
+.fruit h3{font-size:1.4rem}
+.fruit p{color:var(--ink-soft);font-size:.95rem;margin:0}
 
-/* ---------- season strip ---------- */
-.season{margin-top:3.2rem;border:1px solid var(--line);border-radius:var(--r);background:var(--cream);padding:1.8rem;overflow-x:auto}
-.season h3{font-size:1.1rem;margin-bottom:1.2rem}
-.season-grid{display:grid;grid-template-columns:150px repeat(12,minmax(42px,1fr));gap:.4rem;align-items:center;min-width:720px}
-.season-grid .lbl{font-size:.9rem;font-weight:700}
-.season-grid .m{font-size:.68rem;text-align:center;color:var(--ink-soft);letter-spacing:.06em;text-transform:uppercase}
-.season-grid .m.now{color:var(--cherry);font-weight:700}
-.bar{height:12px;border-radius:999px;background:rgba(44,33,27,.07)}
-.bar.on{background:linear-gradient(90deg,var(--cherry),#C0413F)}
-.bar.on.pe{background:linear-gradient(90deg,var(--peach),var(--peach-lt))}
-.season-note{margin:1.1rem 0 0;font-size:.85rem;color:var(--ink-soft)}
-
-/* ---------- odmiany ---------- */
-.variety-group{margin-top:3.2rem}
-.vg-head{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;padding-bottom:1rem;border-bottom:1px solid var(--line);margin-bottom:1.6rem}
-.vg-head h3{font-size:1.75rem}
-.vg-head .count{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--cherry);background:rgba(150,22,28,.09);padding:.28rem .7rem;border-radius:999px}
-.vg-head .flow{margin-left:auto;font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:.6rem}
-.vg-head .flow::after{content:"";width:60px;height:1px;background:linear-gradient(90deg,rgba(44,33,27,.15),var(--cherry))}
-.varieties{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.1rem}
-.variety{
-  position:relative;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);
-  padding:1.6rem 1.35rem 1.4rem;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease;
+/* ---------- ceny / jak kupić ---------- */
+.buy{
+  margin-top:1.6rem;border:1px solid var(--line);border-radius:var(--r);background:var(--cream);
+  padding:clamp(1.4rem,3vw,2rem);
 }
-.variety:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.buy h3{font-size:1.3rem;margin-bottom:.5rem}
+.buy > p{color:var(--ink-soft);font-size:.97rem;max-width:62ch}
+.price-list{list-style:none;margin:1.2rem 0 0;padding:0;display:grid;gap:.55rem;max-width:34rem}
+.price-list li{display:flex;justify-content:space-between;gap:1rem;padding:.6rem .2rem;border-bottom:1px dashed var(--line)}
+.price-list b{font-family:'Fraunces',serif;font-size:1.1rem;color:var(--cherry);white-space:nowrap}
+.steps{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1rem;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:.75rem;align-items:flex-start;font-size:.94rem;color:var(--ink-soft)}
+.steps li::before{
+  content:counter(s);flex:0 0 auto;width:26px;height:26px;border-radius:50%;
+  background:var(--cherry);color:#fff;font-weight:700;font-size:.82rem;display:grid;place-items:center;
+  font-family:'Karla',sans-serif;margin-top:.1rem;
+}
+.steps b{color:var(--ink);display:block}
+
+/* ---------- przetwory ---------- */
+.jam{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1.8rem}
+.jam-card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.3rem}
+.jam-card .head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.3rem .7rem;margin-bottom:.5rem}
+.jam-card h3{font-size:1.12rem}
+.jam-card .best{
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--cherry);
+}
+.jam-card p{margin:0;font-size:.92rem;color:var(--ink-soft);line-height:1.5}
+
+/* ---------- odmiany (accordion) ---------- */
+.acc{margin-top:1.6rem;border:1px solid var(--line);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.acc + .acc{margin-top:.9rem}
+.acc summary{
+  list-style:none;cursor:pointer;padding:1.15rem 1.4rem;display:flex;align-items:center;gap:.85rem;
+  font-family:'Fraunces',serif;font-size:1.25rem;font-weight:600;
+}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{
+  content:"";margin-left:auto;width:10px;height:10px;flex:0 0 auto;
+  border-right:2px solid var(--cherry);border-bottom:2px solid var(--cherry);
+  transform:rotate(45deg) translateY(-3px);transition:transform .25s;
+}
+.acc[open] summary::after{transform:rotate(-135deg) translateY(-3px)}
+.acc summary .count{
+  font-family:'Karla',sans-serif;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  color:var(--cherry);background:rgba(150,22,28,.09);padding:.25rem .6rem;border-radius:999px;
+}
+.acc-body{padding:0 1.4rem 1.4rem}
+.varieties{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:.9rem}
+.variety{position:relative;background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:1.15rem 1.1rem;overflow:hidden}
 .variety::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--vc,var(--cherry))}
-.variety .ord{
-  font-family:'Fraunces',serif;font-size:.95rem;font-weight:700;color:var(--vc,var(--cherry));
-  display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;
-}
+.variety .ord{font-family:'Fraunces',serif;font-size:.85rem;font-weight:700;color:var(--vc,var(--cherry));display:flex;align-items:center;gap:.45rem;margin-bottom:.35rem}
 .variety .ord::after{content:"";flex:1;height:1px;background:var(--line)}
-.variety h4{font-family:'Fraunces',serif;font-size:1.34rem;font-weight:600;margin:0 0 .45rem;letter-spacing:-.01em}
-.variety p{margin:0;font-size:.92rem;color:var(--ink-soft);line-height:1.55}
-.variety .when-s{display:block;margin-top:.7rem;font-size:.73rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);opacity:.75}
+.variety h4{font-family:'Fraunces',serif;font-size:1.2rem;font-weight:600;margin:0 0 .35rem}
+.variety p{margin:0;font-size:.89rem;color:var(--ink-soft);line-height:1.5}
+.variety .when-s{display:block;margin-top:.55rem;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);opacity:.72}
+
+/* ---------- photo band ---------- */
+.band{position:relative;padding:0;background:#2A1B14;isolation:isolate}
+.band img{width:100%;height:clamp(175px,32vw,380px);object-fit:cover;opacity:.62}
+.band-txt{
+  position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:1.5rem;
+}
+.band-txt p{
+  font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.15rem,3vw,2rem);color:#FFF6E8;
+  margin:0;max-width:24ch;text-shadow:0 2px 24px rgba(0,0,0,.5);
+}
 
 /* ---------- gallery ---------- */
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2.6rem}
-.tile{aspect-ratio:1;border-radius:14px;overflow:hidden;position:relative;background:var(--cream-2);display:grid;place-items:center}
-.tile svg{width:100%;height:100%}
-.tile:nth-child(1),.tile:nth-child(6){grid-row:span 1}
-.tile-label{position:absolute;left:.8rem;bottom:.7rem;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(44,33,27,.55);font-weight:700}
+.gal{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.9rem;margin-top:1.6rem;
+}
+.gal button{
+  padding:0;border:0;background:var(--cream-2);border-radius:14px;overflow:hidden;cursor:zoom-in;
+  aspect-ratio:4/3;display:block;
+}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gal button:hover img{transform:scale(1.04)}
+.lb{
+  position:fixed;inset:0;z-index:200;background:rgba(24,16,11,.94);display:none;
+  place-items:center;padding:1.2rem;
+}
+.lb[open],.lb.on{display:grid}
+.lb img{max-width:100%;max-height:88vh;border-radius:10px;object-fit:contain}
+.lb-close{
+  position:absolute;top:1rem;right:1rem;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
+  background:rgba(255,255,255,.14);color:#fff;font-size:1.4rem;line-height:1;
+}
 
-/* ---------- news ---------- */
-.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem;margin-top:2.6rem}
-.post{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem;display:flex;flex-direction:column;gap:.7rem}
-.post-head{display:flex;align-items:center;gap:.75rem}
-.post-head .av{width:38px;height:38px;border-radius:50%;background:var(--cream-2);display:grid;place-items:center;flex:0 0 auto}
-.post-head b{font-size:.95rem;display:block;line-height:1.2}
-.post-head time{font-size:.78rem;color:var(--ink-soft)}
-.post p{font-size:.96rem;color:var(--ink-soft);margin:0}
-.post .tag{align-self:flex-start;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--cherry);background:rgba(150,22,28,.09);padding:.3rem .7rem;border-radius:999px}
+/* ---------- o sadzie ---------- */
+.two-col{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.8rem,5vw,4rem);align-items:center}
+.signature{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;color:var(--cherry);margin-top:1.1rem}
+.frame{position:relative;border-radius:var(--r);overflow:hidden;background:var(--cream-2);box-shadow:var(--shadow);aspect-ratio:4/3}
+.frame svg{width:100%;height:100%;display:block}
+.stat-row{display:flex;gap:2rem;margin-top:1.6rem;flex-wrap:wrap}
+.stat b{display:block;font-family:'Fraunces',serif;font-size:1.9rem;color:var(--cherry);line-height:1}
+.stat span{font-size:.76rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* ---------- faq ---------- */
+.faq{max-width:44rem;margin-top:1.4rem}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:1rem .2rem;display:flex;align-items:center;gap:.8rem;
+  font-weight:700;font-size:1rem;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";margin-left:auto;font-size:1.3rem;color:var(--cherry);font-weight:400;line-height:1;transition:transform .25s;
+}
+.faq details[open] summary::after{content:"−"}
+.faq .a{padding:0 .2rem 1.1rem;color:var(--ink-soft);font-size:.96rem;max-width:60ch}
+.faq .a p{margin:0 0 .7rem}
+.faq .a p:last-child{margin:0}
 
 /* ---------- contact ---------- */
 .contact{background:var(--ink);color:#F6EFE4}
 .contact .section-title{color:#fff}
 .contact .eyebrow{color:var(--peach-lt)}
-.contact .eyebrow::before{background:var(--peach-lt)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem)}
-.cinfo{list-style:none;padding:0;margin:2rem 0 0;display:grid;gap:1.4rem}
-.cinfo li{display:flex;gap:1rem;align-items:flex-start}
-.cinfo .ci{width:42px;height:42px;border-radius:12px;background:rgba(246,239,228,.09);display:grid;place-items:center;flex:0 0 auto}
-.cinfo span{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;opacity:.6;display:block}
-.cinfo a,.cinfo b{font-family:'Fraunces',serif;font-size:1.24rem;font-weight:600;text-decoration:none;color:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.8rem,5vw,4rem)}
+.cinfo{list-style:none;padding:0;margin:1.6rem 0 0;display:grid;gap:1.1rem}
+.cinfo li{display:flex;gap:.9rem;align-items:flex-start}
+.cinfo .ci{width:40px;height:40px;border-radius:12px;background:rgba(246,239,228,.09);display:grid;place-items:center;flex:0 0 auto}
+.cinfo span{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;opacity:.6;display:block}
+.cinfo a,.cinfo b{font-family:'Fraunces',serif;font-size:1.18rem;font-weight:600;text-decoration:none;color:#fff}
 .cinfo a:hover{color:var(--peach-lt)}
-.map{
-  border-radius:var(--r);overflow:hidden;background:#241B16;border:1px solid rgba(246,239,228,.14);
-  min-height:340px;position:relative;display:flex;flex-direction:column;
-}
+.cinfo em{font-style:normal;font-size:.85rem;opacity:.62;display:block;font-family:'Karla',sans-serif;font-weight:400}
+.drive{margin-top:1.8rem;border:1px solid rgba(246,239,228,.16);border-radius:var(--r);padding:1.3rem 1.4rem;background:rgba(246,239,228,.04)}
+.drive h3{font-size:1.05rem;margin-bottom:.9rem;color:#fff}
+.drive ul{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}
+.drive li{display:flex;justify-content:space-between;gap:1rem;font-size:.94rem;border-bottom:1px dashed rgba(246,239,228,.14);padding-bottom:.5rem}
+.drive li:last-child{border:0;padding-bottom:0}
+.drive b{font-family:'Fraunces',serif;color:var(--peach-lt);font-weight:600}
+.drive small{display:block;margin-top:.9rem;opacity:.55;font-size:.8rem}
+.map{border-radius:var(--r);overflow:hidden;background:#241B16;border:1px solid rgba(246,239,228,.14);display:flex;flex-direction:column;min-height:220px}
 .map svg{flex:1;width:100%;display:block}
-.map-foot{padding:1.1rem 1.3rem;border-top:1px solid rgba(246,239,228,.14);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
-.map-foot small{opacity:.7;font-size:.85rem}
+.map-foot{padding:1rem 1.2rem;border-top:1px solid rgba(246,239,228,.14);display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.map-foot small{opacity:.7;font-size:.84rem}
 .map-foot a{color:var(--peach-lt);font-weight:700;font-size:.9rem;text-decoration:none}
 .map-foot a:hover{text-decoration:underline}
 
 /* ---------- footer ---------- */
-footer{background:#231A15;color:rgba(246,239,228,.65);padding:3rem 0 2.5rem;font-size:.88rem}
-.foot{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;align-items:center}
+footer{background:#231A15;color:rgba(246,239,228,.65);padding:2.4rem 0 2rem;font-size:.87rem}
+.foot{display:flex;justify-content:space-between;gap:1.2rem;flex-wrap:wrap;align-items:center}
 .foot a{color:rgba(246,239,228,.8);text-decoration:none}
 .foot a:hover{color:#fff}
-.foot-links{display:flex;gap:1.4rem;flex-wrap:wrap}
+.foot-links{display:flex;gap:1.2rem;flex-wrap:wrap}
+
+/* ---------- sticky mobile action bar ---------- */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;gap:.6rem;padding:.6rem .8rem;
+  padding-bottom:calc(.6rem + env(safe-area-inset-bottom,0px));
+  background:rgba(250,244,233,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);
+}
+.dock .btn{flex:1;padding:.85rem .6rem;font-size:.92rem}
 
 /* ---------- reveal ---------- */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
 .rv.in{opacity:1;transform:none}
 
 @media (max-width:900px){
+  :root{--bar:68px}
   .two-col,.contact-grid{grid-template-columns:1fr}
   .facts-grid{grid-template-columns:1fr}
+  .fact{padding:1rem 1.2rem;flex-direction:row;align-items:baseline;flex-wrap:wrap;gap:.1rem .6rem}
+  .fact span{flex:0 0 100%;order:-1;opacity:.62;font-size:.66rem}
+  .fact b{font-size:1.05rem}
+  .fact p{font-size:.85rem;opacity:.82}
   .nav-links{
-    position:fixed;inset:64px 0 auto 0;background:var(--cream);flex-direction:column;gap:0;
-    padding:1rem 1.5rem 2rem;border-bottom:1px solid var(--line);transform:translateY(-120%);transition:transform .3s ease;
+    position:fixed;inset:60px 0 auto 0;background:var(--cream);flex-direction:column;gap:0;
+    padding:.8rem 1.2rem 1.6rem;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .3s ease;
   }
   .nav-links.open{transform:none}
   .nav-links li{width:100%;border-bottom:1px solid var(--line)}
-  .nav-links a{display:block;padding:.95rem 0;font-size:1.05rem}
+  .nav-links a{display:block;padding:.9rem 0;font-size:1.02rem}
   .burger{display:block}
   .nav-cta .btn{display:none}
-  .frame{aspect-ratio:4/3}
+  .dock{display:flex}
+  .frame{aspect-ratio:16/10}
 }
 @media (max-width:700px){
-  .hero-art{width:190%;left:-45%}
-  .hero-inner{padding-bottom:clamp(7rem,26vw,10rem)}
+  body{font-size:16px}
+  section{padding:2.1rem 0}
+  .hero-inner{min-height:min(78vh,620px)}
+  .section-title{margin-bottom:.7rem}
+  .jam{gap:.7rem}
+  .jam-card{padding:1rem 1.1rem}
+  .jam-card p{font-size:.89rem;line-height:1.45}
+  .fruit img{aspect-ratio:16/9}
+  .fruit-body{padding:1.15rem 1.2rem 1.3rem}
+  .now-card{padding:1.2rem}
+  .buy{padding:1.15rem 1.2rem 1.3rem}
+  .faq summary{padding:.85rem .2rem}
+  .faq .a{padding-bottom:.95rem}
+  .cinfo{gap:.9rem}
+  .drive{padding:1.1rem 1.2rem;margin-top:1.4rem}
+  /* the orchard illustration is decorative and the page is already photo-rich on a phone */
+  #o-sadzie .frame{display:none}
+  .cal-row{grid-template-columns:1fr;gap:.3rem}
+  .cal-row .lbl{min-width:0}
+  .months{gap:2px}
+  .mo{height:26px;font-size:.53rem}
+  .steps{gap:.7rem}
+  /* gallery becomes a swipeable strip instead of stacked squares */
+  .gal{
+    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:.7rem;
+    margin-inline:-1.1rem;padding:0 1.1rem .6rem;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  .gal::-webkit-scrollbar{display:none}
+  .gal button{flex:0 0 78%;scroll-snap-align:center;aspect-ratio:4/3}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -247,18 +400,12 @@ footer{background:#231A15;color:rgba(246,239,228,.65);padding:3rem 0 2.5rem;font
 </head>
 <body>
 
-<!-- ============ LOGO (reusable symbol) ============ -->
+<a class="skip" href="#tresc">Przejdź do treści</a>
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <path id="arcTop" d="M18,50 a32,32 0 0 1 64,0"></path>
     <path id="arcBot" d="M12,50 a38,38 0 0 0 76,0"></path>
-    <g id="windmill">
-      <g transform="translate(50,38)">
-        <g id="blades" fill="#221A15">
-          <g><path d="M0,-1.6 L-19,-6 L-19,-2 Z" transform="rotate(0)"/></g>
-        </g>
-      </g>
-    </g>
   </defs>
 </svg>
 
@@ -275,12 +422,9 @@ footer{background:#231A15;color:rgba(246,239,228,.65);padding:3rem 0 2.5rem;font
         <text font-family="Fraunces,Georgia,serif" font-size="11.5" font-weight="600" letter-spacing="1.6" fill="#221A15">
           <textPath href="#arcBot" startOffset="50%" text-anchor="middle">WIATRAKIEM</textPath>
         </text>
-        <g class="mill" fill="#221A15">
-          <g class="rotor" style="transform-origin:50px 40px">
-            <g id="bladeset"></g>
-          </g>
-          <circle cx="50" cy="40" r="2" />
-          <path d="M50,40 L64,36 L64,44 Z" opacity="0"/>
+        <g fill="#221A15">
+          <g id="bladeset"></g>
+          <circle cx="50" cy="40" r="2"/>
           <path d="M49,42 L44,72 M51,42 L56,72 M46.2,54 L53.8,54 M45.1,61 L54.9,61 M44.2,67 L55.8,67 M44,72 L47.5,54 M56,72 L52.5,54" stroke="#221A15" stroke-width="1.1" fill="none" stroke-linecap="round"/>
         </g>
       </svg>
@@ -291,68 +435,42 @@ footer{background:#231A15;color:rgba(246,239,228,.65);padding:3rem 0 2.5rem;font
     </a>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="#o-sadzie">O sadzie</a></li>
-      <li><a href="#owoce">Owoce</a></li>
+      <li><a href="#teraz">Co dojrzewa</a></li>
+      <li><a href="#owoce">Owoce i ceny</a></li>
+      <li><a href="#przetwory">Na przetwory</a></li>
       <li><a href="#odmiany">Odmiany</a></li>
       <li><a href="#galeria">Galeria</a></li>
-      <li><a href="#aktualnosci">Aktualności</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="#kontakt">Dojazd</a></li>
     </ul>
 
     <div class="nav-cta">
       <a class="btn btn-primary" href="tel:+48500326588">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
         500 326 588
       </a>
-      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <div class="hero-inner wrap">
+  <img class="hero-bg" src="img/brzoskwinia-na-drzewie-800.jpg"
+       srcset="img/brzoskwinia-na-drzewie-800.jpg 800w, img/brzoskwinia-na-drzewie-1600.jpg 1600w"
+       sizes="100vw" alt="Dojrzała brzoskwinia na gałęzi w sadzie" fetchpriority="high" width="1600" height="1200">
+  <div class="hero-inner wrap" id="tresc">
     <div class="hero-copy">
-      <div class="eyebrow">Golęczewo · gmina Suchy Las</div>
+      <div class="eyebrow">Golęczewo · 15 minut od Poznania</div>
       <h1>Wiśnie i brzoskwinie <em>prosto spod wiatraka</em></h1>
-      <p class="hero-lead">Rodzinny sad kilkanaście minut od Poznania. Trzy odmiany wiśni i pięć odmian brzoskwiń, które dojrzewają jedna po drugiej przez całe lato. Zrywamy rano, sprzedajemy tego samego dnia.</p>
+      <p class="hero-lead">Rodzinny sad Ani i Pawła. Zrywamy rano, sprzedajemy po południu — tego samego dnia. Osiem odmian dojrzewa jedna po drugiej, więc sezon trwa całe lato, a nie dwa tygodnie.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="tel:+48500326588">Zadzwoń i zapytaj o owoce</a>
-        <a class="btn btn-ghost" href="#kontakt">Jak do nas trafić</a>
+        <a class="btn btn-primary" href="tel:+48500326588">Zadzwoń: 500 326 588</a>
+        <a class="btn btn-light" href="#teraz">Co teraz dojrzewa</a>
       </div>
-      <p class="hero-note"><span class="dot"></span> Sezon w pełni — sprawdź, co akurat dojrzewa</p>
+      <p class="pill" id="statusPill"><span class="dot"></span><span id="statusLabel">Otwarte niedziela–piątek, 16:00–19:00</span></p>
+      <p class="hero-hours" id="statusNote">W soboty sad jest nieczynny.</p>
     </div>
   </div>
-
-  <svg class="hero-art" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
-    <defs>
-      <linearGradient id="hill1" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#E9D7B8"/><stop offset="100%" stop-color="#DFC9A4"/>
-      </linearGradient>
-      <linearGradient id="hill2" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#C9B189"/><stop offset="100%" stop-color="#B99E74"/>
-      </linearGradient>
-      <linearGradient id="fld" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#7E8F5E"/><stop offset="100%" stop-color="#63764A"/>
-      </linearGradient>
-    </defs>
-    <!-- distant hills -->
-    <path d="M0,250 C180,205 330,255 470,235 C640,212 760,258 900,240 C1060,220 1200,255 1440,225 L1440,420 L0,420 Z" fill="url(#hill1)"/>
-    <path d="M0,300 C200,268 360,310 520,292 C700,272 860,312 1020,296 C1180,280 1320,308 1440,290 L1440,420 L0,420 Z" fill="url(#hill2)"/>
-    <!-- windmill silhouette -->
-    <g transform="translate(1130,60) scale(1.05)" fill="#3A2C23" opacity=".9">
-      <path d="M42,110 L34,250 M58,110 L66,250 M39,150 L61,150 M37,180 L63,180 M35.6,212 L64.4,212 M34,250 L44,150 M66,250 L56,150" stroke="#3A2C23" stroke-width="2.6" fill="none" stroke-linecap="round"/>
-      <g id="heroRotor" style="transform-origin:50px 108px"></g>
-      <circle cx="50" cy="108" r="4"/>
-      <path d="M50,108 L86,100 L86,118 Z" opacity=".85"/>
-    </g>
-    <!-- orchard rows -->
-    <path d="M0,330 C240,308 480,344 720,326 C960,308 1200,342 1440,320 L1440,420 L0,420 Z" fill="url(#fld)"/>
-    <g fill="#41522F">
-      <g id="treeRow"></g>
-    </g>
-    <path d="M0,392 C300,376 560,398 820,388 C1080,378 1260,396 1440,386 L1440,420 L0,420 Z" fill="#38472A"/>
-  </svg>
 </section>
 
 <!-- ============ FACTS ============ -->
@@ -360,282 +478,314 @@ footer{background:#231A15;color:rgba(246,239,228,.65);padding:3rem 0 2.5rem;font
   <div class="wrap">
     <div class="facts-grid">
       <div class="fact">
+        <span>Godziny</span>
+        <b>niedz.–pt. 16:00–19:00</b>
+        <p>W soboty nieczynne</p>
+      </div>
+      <div class="fact">
         <span>Gdzie</span>
         <b>ul. Tysiąclecia 25</b>
-        <p>62-001 Golęczewo, 15 min od Poznania</p>
+        <p>62-001 Golęczewo, gmina Suchy Las</p>
       </div>
       <div class="fact">
-        <span>Co rośnie</span>
-        <b>Wiśnie i brzoskwinie</b>
-        <p>Sad wiśniowo-brzoskwiniowy, zbiór ręczny</p>
-      </div>
-      <div class="fact">
-        <span>Kontakt</span>
-        <b><a href="tel:+48500326588" style="text-decoration:none;color:inherit">500 326 588</a></b>
-        <p>Zadzwoń — powiemy, co dziś dojrzało</p>
+        <span>Telefon</span>
+        <b><a href="tel:+48500326588" style="color:inherit">500 326 588</a></b>
+        <p>Powiemy, co dziś zeszło z drzew</p>
       </div>
     </div>
   </div>
 </div>
 
+<!-- ============ CO TERAZ DOJRZEWA ============ -->
+<section id="teraz">
+  <div class="wrap">
+    <div class="now-card rv">
+      <div class="now-head">
+        <div class="eyebrow" style="margin:0">Dziś w sadzie</div>
+      </div>
+      <h2 class="section-title" id="nowTitle">Sezon w sadzie</h2>
+      <p class="now-text" id="nowText">Odmiany schodzą z drzew po kolei — poniżej kalendarz całego sezonu.</p>
+      <div class="chips" id="nowChips"></div>
+
+      <div class="cal">
+        <div class="cal-row">
+          <div class="lbl">Wiśnie</div>
+          <div class="months" data-fruit="cherry" data-on="6,7"></div>
+        </div>
+        <div class="cal-row">
+          <div class="lbl">Brzoskwinie</div>
+          <div class="months" data-fruit="peach" data-on="7,8,9"></div>
+        </div>
+      </div>
+      <p class="cal-note">Terminy zależą od pogody — w chłodniejsze lata wszystko przesuwa się nawet o dwa tygodnie. Aktualny stan zawsze podajemy telefonicznie i na Facebooku.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OWOCE + CENY ============ -->
+<section id="owoce" class="band-paper">
+  <div class="wrap">
+    <div class="rv" style="max-width:60ch">
+      <div class="eyebrow">Co u nas rośnie</div>
+      <h2 class="section-title">Dwa owoce, dwa krótkie sezony</h2>
+      <p class="lead">Sezon w sadzie trwa krótko i nie da się go przyspieszyć. Sadzimy kilka odmian każdego gatunku właśnie po to, żeby nie skończył się po dwóch tygodniach.</p>
+    </div>
+
+    <div class="fruits">
+      <article class="fruit rv">
+        <img src="img/wisnie-na-galezi-800.jpg"
+             srcset="img/wisnie-na-galezi-800.jpg 800w, img/wisnie-na-galezi-1600.jpg 1600w"
+             sizes="(max-width:700px) 92vw, 45vw"
+             alt="Ciemnoczerwone wiśnie na gałęzi" loading="lazy" width="1390" height="1390">
+        <div class="fruit-body">
+          <span class="when">Czerwiec — lipiec</span>
+          <h3>Wiśnie</h3>
+          <p>Trzy odmiany — Nefris, Panda i Łutówka — dojrzewające jedna po drugiej. Kwaśne, aromatyczne, z gęstym ciemnym sokiem. To z nich wychodzą najlepsze konfitury, nalewki i ciasta.</p>
+        </div>
+      </article>
+
+      <article class="fruit rv">
+        <img src="img/brzoskwinie-skrzynki-800.jpg"
+             srcset="img/brzoskwinie-skrzynki-800.jpg 800w, img/brzoskwinie-skrzynki-1600.jpg 1600w"
+             sizes="(max-width:700px) 92vw, 45vw"
+             alt="Skrzynki pełne świeżo zerwanych brzoskwiń" loading="lazy" width="1801" height="1273">
+        <div class="fruit-body">
+          <span class="when">Lipiec — wrzesień</span>
+          <h3>Brzoskwinie</h3>
+          <p>Pięć odmian, od wczesnego Harnasia po późny Flaming. Miękkie, słodkie, o intensywnym zapachu — zrywane dojrzałe, nie „na zapas”, dlatego smakują inaczej niż te z półki.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="buy rv">
+      <h3 id="cenyTitle">Ceny</h3>
+      <div id="cenyBody">
+        <p>Cena za kilogram zmienia się w trakcie sezonu — zależy od odmiany i od tego, ile akurat zeszło z drzew. Zadzwoń, podamy aktualną. Przy większych ilościach na przetwory ustalamy cenę indywidualnie.</p>
+      </div>
+      <ol class="steps">
+        <li><span><b>Zadzwoń</b> — powiemy, która odmiana jest dziś na drzewach i ile mamy.</span></li>
+        <li><span><b>Przyjedź</b> między 16:00 a 19:00, od niedzieli do piątku.</span></li>
+        <li><span><b>Odbierz owoce</b> zerwane tego samego dnia — na miejscu, prosto ze skrzynki.</span></li>
+      </ol>
+      <p style="margin:1.4rem 0 0">
+        <a class="btn btn-primary" href="tel:+48500326588">Zadzwoń: 500 326 588</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NA PRZETWORY ============ -->
+<section id="przetwory">
+  <div class="wrap">
+    <div class="rv" style="max-width:60ch">
+      <div class="eyebrow">Na przetwory</div>
+      <h2 class="section-title">Która odmiana do czego</h2>
+      <p class="lead">Większość owoców, które od nas wyjeżdża, trafia do słoików i zamrażarek. Dlatego podpowiadamy, po którą odmianę sięgnąć — i ile mniej więcej kilogramów zamówić.</p>
+    </div>
+
+    <div class="jam">
+      <article class="jam-card rv">
+        <div class="head"><h3>Konfitura i dżem</h3><span class="best">Łutówka · Nefris</span></div>
+        <p>Im kwaśniejsza wiśnia, tym wyraźniejszy smak po zasmażeniu. Orientacyjnie 3 kg owoców to około sześciu słoiczków po 0,4 l.</p>
+      </article>
+      <article class="jam-card rv">
+        <div class="head"><h3>Nalewka wiśniowa</h3><span class="best">Łutówka</span></div>
+        <p>Najciemniejszy sok i najgłębszy kolor ze wszystkich naszych wiśni. Na klasyczną nalewkę bierze się zwykle kilogram owoców na litr alkoholu.</p>
+      </article>
+      <article class="jam-card rv">
+        <div class="head"><h3>Mrożenie</h3><span class="best">Panda</span></div>
+        <p>Zwarty miąższ nie rozpada się po rozmrożeniu, a owoce łatwo się drylują. Najlepszy wybór, jeśli robisz zapas na ciasta przez cały rok.</p>
+      </article>
+      <article class="jam-card rv">
+        <div class="head"><h3>Brzoskwinie w syropie</h3><span class="best">Redhaven · Inka</span></div>
+        <p>Miąższ dobrze odchodzi od pestki, więc połówki wychodzą równe. Owoce zbieramy dojrzałe, ale jędrne — takie, które trzymają kształt w słoiku.</p>
+      </article>
+      <article class="jam-card rv">
+        <div class="head"><h3>Ciasta i deser</h3><span class="best">Panda · Royal</span></div>
+        <p>Duże, mięsiste owoce, które nie puszczają zbyt dużo soku w cieście. Royal to też ta brzoskwinia, którą najczęściej zjada się w drodze do auta.</p>
+      </article>
+      <article class="jam-card rv">
+        <div class="head"><h3>Większe zamówienie</h3><span class="best">Cały sezon</span></div>
+        <p>Skrzynki na przetwory, do cukierni czy na wesele najlepiej zamawiać z wyprzedzeniem — zadzwoń, ustalimy termin i ilość.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ODMIANY ============ -->
+<section id="odmiany" class="band-paper">
+  <div class="wrap">
+    <div class="rv" style="max-width:60ch">
+      <div class="eyebrow">Odmiany</div>
+      <h2 class="section-title">Osiem odmian, jedna po drugiej</h2>
+      <p class="lead">Każda dojrzewa w swoim czasie — dlatego sezon rozciąga się na całe lato. Rozwiń listę, żeby zobaczyć kolejność, w jakiej pojawiają się u nas na drzewach.</p>
+    </div>
+
+    <details class="acc rv">
+      <summary>Wiśnie <span class="count">3 odmiany</span></summary>
+      <div class="acc-body">
+        <div class="varieties">
+          <article class="variety" style="--vc:#B8322F">
+            <div class="ord">01</div>
+            <h4>Nefris</h4>
+            <p>Otwiera sezon wiśniowy. Ciemne, soczyste owoce o wyraźnej kwasowości — takie, po których od razu wiadomo, że to wiśnia, a nie czereśnia.</p>
+            <span class="when-s">Pierwsza w sadzie</span>
+          </article>
+          <article class="variety" style="--vc:#96161C">
+            <div class="ord">02</div>
+            <h4>Panda</h4>
+            <p>Duże, ciemnobordowe owoce o zwartym miąższu. Łatwo się zrywa i dobrze znosi drogę — nasz pierwszy wybór na mrożenie i przetwory.</p>
+            <span class="when-s">Środek sezonu</span>
+          </article>
+          <article class="variety" style="--vc:#6E0F14">
+            <div class="ord">03</div>
+            <h4>Łutówka</h4>
+            <p>Klasyk polskich sadów i najpóźniejsza z naszych wiśni. Mocno kwaśna, o gęstym, ciemnym soku — to z niej wychodzą najlepsze konfitury i nalewki.</p>
+            <span class="when-s">Zamyka sezon wiśniowy</span>
+          </article>
+        </div>
+      </div>
+    </details>
+
+    <details class="acc rv">
+      <summary>Brzoskwinie <span class="count">5 odmian</span></summary>
+      <div class="acc-body">
+        <div class="varieties">
+          <article class="variety" style="--vc:#F0B968">
+            <div class="ord">01</div>
+            <h4>Harnaś</h4>
+            <p>Polska, wczesna odmiana, od której zaczynają się u nas brzoskwinie. Owoce średniej wielkości, soczyste, z mocnym rumieńcem.</p>
+            <span class="when-s">Pierwsza w sadzie</span>
+          </article>
+          <article class="variety" style="--vc:#E8A94E">
+            <div class="ord">02</div>
+            <h4>Redhaven</h4>
+            <p>Najbardziej znana brzoskwinia świata i nie bez powodu. Żółty miąższ dobrze odchodzący od pestki, smak słodko-kwaskowy — uniwersalna.</p>
+            <span class="when-s">Wczesny środek sezonu</span>
+          </article>
+          <article class="variety" style="--vc:#E39A45">
+            <div class="ord">03</div>
+            <h4>Royal</h4>
+            <p>Duże owoce z rumieńcem na niemal całej skórce. Jędrny, słodki miąższ — brzoskwinia, którą najczęściej zjada się od razu w drodze do auta.</p>
+            <span class="when-s">Pełnia sezonu</span>
+          </article>
+          <article class="variety" style="--vc:#D9832F">
+            <div class="ord">04</div>
+            <h4>Inka</h4>
+            <p>Polska odmiana o żółtym, aromatycznym miąższu i wyraźnie słodkim smaku. Bardzo dobra zarówno na deser, jak i do słoika.</p>
+            <span class="when-s">Późna pełnia sezonu</span>
+          </article>
+          <article class="variety" style="--vc:#C0693B">
+            <div class="ord">05</div>
+            <h4>Flaming</h4>
+            <p>Nasza najpóźniejsza brzoskwinia, która zamyka cały sadowy sezon. Dorodne owoce o intensywnym wybarwieniu i pełnym, słodkim smaku.</p>
+            <span class="when-s">Zamyka sezon</span>
+          </article>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ PHOTO BAND ============ -->
+<div class="band">
+  <img src="img/wisnie-skrzynka-800.jpg"
+       srcset="img/wisnie-skrzynka-800.jpg 800w, img/wisnie-skrzynka-1600.jpg 1600w"
+       sizes="100vw" alt="Skrzynka pełna dojrzałych wiśni" loading="lazy" width="2048" height="920">
+  <div class="band-txt"><p>Zrywamy rano. Sprzedajemy po południu. Tego samego dnia.</p></div>
+</div>
+
+<!-- ============ GALERIA ============ -->
+<section id="galeria">
+  <div class="wrap">
+    <div class="rv" style="max-width:56ch">
+      <div class="eyebrow">Galeria</div>
+      <h2 class="section-title">Sad w sezonie</h2>
+      <p class="lead">Zdjęcia z naszego sadu i z dni, w których owoce schodzą z drzew.</p>
+    </div>
+    <div class="gal rv" id="gal"></div>
+  </div>
+</section>
+
 <!-- ============ O SADZIE ============ -->
-<section id="o-sadzie">
+<section id="o-sadzie" class="band-paper">
   <div class="wrap two-col">
     <div class="rv">
       <div class="eyebrow">O sadzie</div>
       <h2 class="section-title">Sad, który prowadzimy we dwoje</h2>
-      <p class="lead">Nazywamy się Ania i Paweł Śpitalniak. Nasz sad leży w Golęczewie, na skraju gminy Suchy Las, tuż przy wiatraku, od którego wzięła się nazwa. Rosną tu wiśnie i brzoskwinie — drzewa, którymi zajmujemy się przez cały rok, żeby przez kilka tygodni lata dały owoce, jakich nie znajdziesz w markecie.</p>
-      <p class="lead">Nie wysyłamy owoców w Polskę i nie trzymamy ich tygodniami w chłodni. To, co zrywamy rano, tego samego dnia trafia do koszyka — do naszych sąsiadów i do mieszkańców Poznania. Sadzimy kilka odmian każdego gatunku właśnie po to, żeby sezon nie skończył się po dwóch tygodniach.</p>
+      <p class="lead">Nazywamy się Ania i Paweł Śpitalniak. Nasz sad leży w Golęczewie, na skraju gminy Suchy Las, tuż przy wiatraku, od którego wzięła się nazwa. Nie wysyłamy owoców w Polskę i nie trzymamy ich tygodniami w chłodni — to, co zrywamy rano, tego samego dnia trafia do koszyka naszych sąsiadów i mieszkańców Poznania.</p>
       <p class="signature">— Ania i Paweł</p>
       <div class="stat-row">
-        <div class="stat"><b>2</b><span>gatunki owoców</span></div>
+        <div class="stat"><b>8</b><span>odmian owoców</span></div>
         <div class="stat"><b>1,7 tys.</b><span>osób na Facebooku</span></div>
         <div class="stat"><b>15 min</b><span>z centrum Poznania</span></div>
       </div>
     </div>
 
     <div class="frame rv">
-      <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-label="Ilustracja sadu">
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Ilustracja sadu z wiatrakiem">
         <defs>
           <linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#F7E7CE"/><stop offset="100%" stop-color="#EBD3AC"/>
           </linearGradient>
         </defs>
-        <rect width="400" height="500" fill="url(#sky2)"/>
-        <circle cx="300" cy="110" r="46" fill="#F3C77E" opacity=".55"/>
-        <path d="M0,360 C90,340 150,372 230,356 C310,340 350,366 400,352 L400,500 L0,500 Z" fill="#7C8C5C"/>
-        <path d="M0,410 C110,394 190,420 280,406 C340,396 370,410 400,404 L400,500 L0,500 Z" fill="#63744A"/>
-        <!-- tree -->
-        <path d="M196,400 L196,300" stroke="#5A4330" stroke-width="11" stroke-linecap="round"/>
-        <path d="M196,340 L166,308 M196,352 L228,318" stroke="#5A4330" stroke-width="7" stroke-linecap="round"/>
-        <circle cx="196" cy="270" r="76" fill="#5E7A4A"/>
-        <circle cx="146" cy="298" r="46" fill="#688551"/>
-        <circle cx="248" cy="296" r="50" fill="#547042"/>
+        <rect width="400" height="300" fill="url(#sky2)"/>
+        <circle cx="310" cy="66" r="40" fill="#F3C77E" opacity=".55"/>
+        <path d="M0,196 C90,178 150,208 230,192 C310,176 350,200 400,188 L400,300 L0,300 Z" fill="#7C8C5C"/>
+        <path d="M0,240 C110,226 190,250 280,236 C340,226 370,240 400,234 L400,300 L0,300 Z" fill="#63744A"/>
+        <path d="M212,236 L212,150" stroke="#5A4330" stroke-width="10" stroke-linecap="round"/>
+        <path d="M212,184 L186,156 M212,194 L240,166" stroke="#5A4330" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="212" cy="126" r="62" fill="#5E7A4A"/>
+        <circle cx="170" cy="150" r="38" fill="#688551"/>
+        <circle cx="256" cy="148" r="41" fill="#547042"/>
         <g fill="#96161C">
-          <circle cx="168" cy="262" r="7"/><circle cx="214" cy="248" r="7"/><circle cx="234" cy="296" r="7"/>
-          <circle cx="150" cy="308" r="7"/><circle cx="196" cy="316" r="7"/><circle cx="256" cy="270" r="6"/>
-          <circle cx="122" cy="292" r="6"/><circle cx="184" cy="220" r="6"/>
+          <circle cx="188" cy="120" r="6"/><circle cx="228" cy="108" r="6"/><circle cx="246" cy="150" r="6"/>
+          <circle cx="174" cy="158" r="6"/><circle cx="212" cy="164" r="6"/><circle cx="264" cy="126" r="5"/>
+          <circle cx="150" cy="146" r="5"/><circle cx="200" cy="86" r="5"/>
         </g>
-        <!-- small windmill -->
-        <g transform="translate(52,250) scale(.62)" opacity=".85">
+        <g transform="translate(46,116) scale(.58)" opacity=".85">
           <path d="M42,110 L34,240 M58,110 L66,240 M39,150 L61,150 M37,185 L63,185 M34,240 L44,150 M66,240 L56,150" stroke="#4A382C" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <g id="frameRotor" style="transform-origin:50px 108px"></g>
+          <g id="frameRotor"></g>
           <circle cx="50" cy="108" r="5" fill="#4A382C"/>
         </g>
       </svg>
-      <div class="frame-cap">Miejsce na zdjęcie sadu — wystarczy podmienić tę grafikę.</div>
     </div>
   </div>
 </section>
 
-<!-- ============ OWOCE ============ -->
-<section id="owoce" class="band-paper">
+<!-- ============ FAQ ============ -->
+<section id="faq">
   <div class="wrap">
-    <div class="rv">
-      <div class="eyebrow">Co u nas rośnie</div>
-      <h2 class="section-title">Dwa owoce, dwa krótkie sezony</h2>
-      <p class="lead" style="max-width:60ch">Sezon w sadzie trwa krótko i nie da się go przyspieszyć. Poniżej orientacyjne terminy — dokładne daty zależą od pogody, dlatego zawsze najlepiej zadzwonić albo zajrzeć na naszego Facebooka.</p>
+    <div class="rv" style="max-width:56ch">
+      <div class="eyebrow">Częste pytania</div>
+      <h2 class="section-title">Zanim wsiądziesz w auto</h2>
     </div>
 
-    <div class="cards">
-      <article class="card rv">
-        <svg class="ic" viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M32 14 C34 26 40 30 44 34" fill="none" stroke="#4E6A43" stroke-width="2.6" stroke-linecap="round"/>
-          <path d="M32 14 C30 26 24 30 20 34" fill="none" stroke="#4E6A43" stroke-width="2.6" stroke-linecap="round"/>
-          <path d="M32 14 C38 8 47 9 50 13 C45 18 36 18 32 14 Z" fill="#5E7A4A"/>
-          <circle cx="20" cy="43" r="9.5" fill="#96161C"/><circle cx="44" cy="43" r="9.5" fill="#7E1116"/>
-          <circle cx="17" cy="40" r="2.4" fill="#fff" opacity=".45"/>
-        </svg>
-        <span class="when">Czerwiec — lipiec</span>
-        <h3>Wiśnie</h3>
-        <p>Trzy odmiany — Nefris, Panda i Łutówka — dojrzewające jedna po drugiej. Kwaśne, aromatyczne, idealne na konfitury, nalewki i ciasta.</p>
-      </article>
-
-      <article class="card rv">
-        <svg class="ic" viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="32" cy="38" r="18" fill="#E39A45"/>
-          <path d="M32 20 a18 18 0 0 0 0 36 a13 18 0 0 1 0-36" fill="#D9832F" opacity=".55"/>
-          <path d="M32 20 C33 14 37 11 41 11 C40 16 36 20 32 20 Z" fill="#5E7A4A"/>
-          <path d="M32 20 L32 15" stroke="#5A4330" stroke-width="2.4" stroke-linecap="round"/>
-          <ellipse cx="25" cy="32" rx="4" ry="3" fill="#fff" opacity=".35"/>
-        </svg>
-        <span class="when">Lipiec — sierpień</span>
-        <h3>Brzoskwinie</h3>
-        <p>Pięć odmian, od wczesnego Harnasia po późny Flaming. Miękkie, słodkie, o intensywnym zapachu — zrywane dojrzałe, nie „na zapas”.</p>
-      </article>
-
-      <article class="card soon rv">
-        <svg class="ic" viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="32" cy="32" r="20" fill="none" stroke="#96161C" stroke-width="2.6"/>
-          <path d="M32 20 L32 32 L40 37" fill="none" stroke="#96161C" stroke-width="2.6" stroke-linecap="round"/>
-        </svg>
-        <span class="when">Cały sezon</span>
-        <h3>Zapytaj, zanim przyjedziesz</h3>
-        <p>Odmiany schodzą z drzew po kolei. Jeden telefon oszczędza drogę — powiemy, co jest dziś dostępne i o której najlepiej przyjechać.</p>
-        <a class="btn btn-ghost" style="align-self:flex-start;margin-top:.8rem" href="tel:+48500326588">500 326 588</a>
-      </article>
-    </div>
-
-    <div class="season rv">
-      <h3>Kalendarz sezonu (orientacyjny)</h3>
-      <div class="season-grid" id="seasonGrid">
-        <div class="lbl"></div>
-        <div class="m" data-m="1">Sty</div><div class="m" data-m="2">Lut</div><div class="m" data-m="3">Mar</div>
-        <div class="m" data-m="4">Kwi</div><div class="m" data-m="5">Maj</div><div class="m" data-m="6">Cze</div>
-        <div class="m" data-m="7">Lip</div><div class="m" data-m="8">Sie</div><div class="m" data-m="9">Wrz</div>
-        <div class="m" data-m="10">Paź</div><div class="m" data-m="11">Lis</div><div class="m" data-m="12">Gru</div>
-
-        <div class="lbl">Wiśnie</div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar on"></div><div class="bar on"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-
-        <div class="lbl">Brzoskwinie</div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-        <div class="bar"></div><div class="bar on pe"></div><div class="bar on pe"></div><div class="bar on pe"></div>
-        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
-      </div>
-      <p class="season-note">Terminy zależą od pogody i mogą przesunąć się o dwa tygodnie w każdą stronę. Aktualny stan zawsze podajemy telefonicznie i na Facebooku.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ODMIANY ============ -->
-<section id="odmiany">
-  <div class="wrap">
-    <div class="rv" style="max-width:62ch">
-      <div class="eyebrow">Odmiany</div>
-      <h2 class="section-title">Osiem odmian, jedna po drugiej</h2>
-      <p class="lead">Każda odmiana dojrzewa w swoim czasie — dlatego sezon w sadzie rozciąga się na całe lato, zamiast kończyć po dwóch tygodniach. Poniżej odmiany w kolejności, w jakiej pojawiają się u nas na drzewach.</p>
-    </div>
-
-    <div class="variety-group rv">
-      <div class="vg-head">
-        <h3>Wiśnie</h3>
-        <span class="count">3 odmiany</span>
-        <span class="flow">Kolejność dojrzewania</span>
-      </div>
-      <div class="varieties">
-        <article class="variety" style="--vc:#B8322F">
-          <div class="ord">01</div>
-          <h4>Nefris</h4>
-          <p>Otwiera sezon wiśniowy. Ciemne, soczyste owoce o wyraźnej kwasowości — takie, po których od razu wiadomo, że to wiśnia, a nie czereśnia.</p>
-          <span class="when-s">Pierwsza w sadzie</span>
-        </article>
-        <article class="variety" style="--vc:#96161C">
-          <div class="ord">02</div>
-          <h4>Panda</h4>
-          <p>Duże, ciemnobordowe owoce o zwartym miąższu. Łatwo się zrywa i dobrze znosi drogę — nasz pierwszy wybór na mrożenie i przetwory.</p>
-          <span class="when-s">Środek sezonu</span>
-        </article>
-        <article class="variety" style="--vc:#6E0F14">
-          <div class="ord">03</div>
-          <h4>Łutówka</h4>
-          <p>Klasyk polskich sadów i najpóźniejsza z naszych wiśni. Mocno kwaśna, o gęstym, ciemnym soku — to z niej wychodzą najlepsze konfitury i nalewki.</p>
-          <span class="when-s">Zamyka sezon wiśniowy</span>
-        </article>
-      </div>
-    </div>
-
-    <div class="variety-group rv">
-      <div class="vg-head">
-        <h3>Brzoskwinie</h3>
-        <span class="count">5 odmian</span>
-        <span class="flow">Kolejność dojrzewania</span>
-      </div>
-      <div class="varieties">
-        <article class="variety" style="--vc:#F0B968">
-          <div class="ord">01</div>
-          <h4>Harnaś</h4>
-          <p>Polska, wczesna odmiana, od której zaczynają się u nas brzoskwinie. Owoce średniej wielkości, soczyste, z mocnym rumieńcem.</p>
-          <span class="when-s">Pierwsza w sadzie</span>
-        </article>
-        <article class="variety" style="--vc:#E8A94E">
-          <div class="ord">02</div>
-          <h4>Redhaven</h4>
-          <p>Najbardziej znana brzoskwinia świata i nie bez powodu. Żółty miąższ dobrze odchodzący od pestki, smak słodko-kwaskowy — uniwersalna.</p>
-          <span class="when-s">Wczesny środek sezonu</span>
-        </article>
-        <article class="variety" style="--vc:#E39A45">
-          <div class="ord">03</div>
-          <h4>Royal</h4>
-          <p>Duże owoce z rumieńcem na niemal całej skórce. Jędrny, słodki miąższ — brzoskwinia, którą najczęściej zjada się od razu w drodze do auta.</p>
-          <span class="when-s">Pełnia sezonu</span>
-        </article>
-        <article class="variety" style="--vc:#D9832F">
-          <div class="ord">04</div>
-          <h4>Inka</h4>
-          <p>Polska odmiana o żółtym, aromatycznym miąższu i wyraźnie słodkim smaku. Bardzo dobra zarówno na deser, jak i do słoika.</p>
-          <span class="when-s">Późna pełnia sezonu</span>
-        </article>
-        <article class="variety" style="--vc:#C0693B">
-          <div class="ord">05</div>
-          <h4>Flaming</h4>
-          <p>Nasza najpóźniejsza brzoskwinia, która zamyka cały sadowy sezon. Dorodne owoce o intensywnym wybarwieniu i pełnym, słodkim smaku.</p>
-          <span class="when-s">Zamyka sezon</span>
-        </article>
-      </div>
-    </div>
-
-    <p class="season-note rv" style="margin-top:2rem;max-width:62ch">Terminy zależą od pogody — w chłodniejsze lata wszystko przesuwa się nawet o dwa tygodnie. Zadzwoń, a powiemy, która odmiana jest akurat na drzewach.</p>
-  </div>
-</section>
-
-<!-- ============ GALERIA ============ -->
-<section id="galeria" class="band-paper">
-  <div class="wrap">
-    <div class="rv">
-      <div class="eyebrow">Galeria</div>
-      <h2 class="section-title">Sad w ciągu roku</h2>
-      <p class="lead" style="max-width:58ch">Poniższe kafelki to miejsca na Wasze zdjęcia — kwitnienie w maju, zbiory, skrzynki owoców, wiatrak o zachodzie słońca.</p>
-    </div>
-    <div class="gallery rv" id="gallery"></div>
-  </div>
-</section>
-
-<!-- ============ AKTUALNOŚCI ============ -->
-<section id="aktualnosci">
-  <div class="wrap">
-    <div class="rv">
-      <div class="eyebrow">Aktualności</div>
-      <h2 class="section-title">Co słychać w sadzie</h2>
-      <p class="lead" style="max-width:58ch">Najświeższe informacje o zbiorach publikujemy na Facebooku. Tutaj trafiają te najważniejsze.</p>
-    </div>
-
-    <div class="news">
-      <article class="post rv">
-        <div class="post-head">
-          <div class="av">
-            <svg width="20" height="20" viewBox="0 0 100 100"><path d="M42,40 L36,86 M58,40 L64,86 M40,56 L60,56 M38,70 L62,70" stroke="#2C211B" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="50" cy="34" r="5" fill="#2C211B"/></svg>
-          </div>
-          <div><b>Sad Pod Wiatrakiem</b><time datetime="2026-08-18">18 sierpnia</time></div>
-        </div>
-        <span class="tag">Polecamy</span>
-        <p>Dostajemy od Was sporo wiadomości i pytań o śliwki — dlatego spieszymy z odpowiedzią. Z czystym sumieniem możemy polecić śliwki, które sami sprawdziliśmy; sprzedaje je pan Jacek Gołąb. Jeśli szukacie dobrych, świeżych śliwek, śmiało możecie się tam wybrać.</p>
-      </article>
-
-      <article class="post rv">
-        <div class="post-head">
-          <div class="av">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2C211B" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-          </div>
-          <div><b>Zamówienia</b><time>Cały sezon</time></div>
-        </div>
-        <span class="tag">Informacja</span>
-        <p>Większe ilości — na przetwory, do cukierni czy na wesele — najlepiej zamawiać z wyprzedzeniem. Zadzwoń pod <a href="tel:+48500326588" style="color:var(--cherry);font-weight:700">500 326 588</a>, ustalimy termin i ilość.</p>
-      </article>
-
-      <article class="post rv">
-        <div class="post-head">
-          <div class="av">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="#2C211B"><path d="M13 22V12h3l.5-4H13V6c0-1 .3-1.7 1.8-1.7H17V.8C16.6.7 15.4.6 14 .6c-2.9 0-4.9 1.8-4.9 5V8H6v4h3.1v10H13z"/></svg>
-          </div>
-          <div><b>Facebook</b><time>1,7 tys. obserwujących</time></div>
-        </div>
-        <span class="tag">Bądź na bieżąco</span>
-        <p>Codzienne wieści z sadu, zdjęcia zbiorów i informacje o tym, która odmiana właśnie dojrzewa.</p>
-        <a class="btn btn-ghost" style="align-self:flex-start;margin-top:.4rem" href="https://www.facebook.com/SadPodWiatrakiem" target="_blank" rel="noopener">Otwórz nasz profil</a>
-      </article>
+    <div class="faq rv">
+      <details>
+        <summary>Kiedy jesteście otwarci?</summary>
+        <div class="a"><p>W sezonie od niedzieli do piątku, w godzinach 16:00–19:00. <strong>W soboty sad jest nieczynny</strong> — to jedyny dzień, w którym nie warto przyjeżdżać.</p></div>
+      </details>
+      <details>
+        <summary>Czy trzeba dzwonić przed przyjazdem?</summary>
+        <div class="a"><p>Nie trzeba, ale warto. Odmiany schodzą z drzew po kolei i zdarza się, że akurat kończy się jedna, a druga jeszcze nie dojrzała. Jeden telefon oszczędza całą drogę.</p></div>
+      </details>
+      <details>
+        <summary>Kiedy są wiśnie, a kiedy brzoskwinie?</summary>
+        <div class="a"><p>Wiśnie zwykle w czerwcu i lipcu, brzoskwinie od lipca do września. Terminy zależą od pogody i w chłodniejsze lata przesuwają się nawet o dwa tygodnie — dlatego kalendarz na tej stronie jest orientacyjny.</p></div>
+      </details>
+      <details>
+        <summary>Czy można zamówić większą ilość na przetwory?</summary>
+        <div class="a"><p>Tak. Skrzynki na przetwory, do cukierni czy na wesele najlepiej zamawiać z wyprzedzeniem — zadzwoń pod <a href="tel:+48500326588" style="color:var(--cherry);font-weight:700">500 326 588</a>, ustalimy termin, odmianę i ilość.</p></div>
+      </details>
+      <details>
+        <summary>Ile do Was jechać?</summary>
+        <div class="a"><p>Z centrum Poznania około 15 minut, z Suchego Lasu i Rokietnicy jeszcze bliżej, z Obornik około 20 minut. Adres to ul. Tysiąclecia 25 w Golęczewie — wpisz go w nawigację, dojazd jest prosty.</p></div>
+      </details>
+      <details>
+        <summary>Gdzie szukać aktualności?</summary>
+        <div class="a"><p>Najświeższe wieści — która odmiana właśnie dojrzała, kiedy zaczynamy zbiory — publikujemy na <a href="https://www.facebook.com/SadPodWiatrakiem" target="_blank" rel="noopener" style="color:var(--cherry);font-weight:700">naszym Facebooku</a>. Obserwuje nas tam już ponad 1,7 tysiąca osób.</p></div>
+      </details>
     </div>
   </div>
 </section>
@@ -644,28 +794,43 @@ footer{background:#231A15;color:rgba(246,239,228,.65);padding:3rem 0 2.5rem;font
 <section id="kontakt" class="contact">
   <div class="wrap contact-grid">
     <div class="rv">
-      <div class="eyebrow">Kontakt</div>
+      <div class="eyebrow">Kontakt i dojazd</div>
       <h2 class="section-title">Wpadnij do sadu</h2>
-      <p class="lead" style="color:rgba(246,239,228,.75);max-width:46ch">Najprościej zadzwonić — odbieramy między pracą w sadzie, więc jeśli nie odbierzemy od razu, oddzwonimy.</p>
+      <p class="lead" style="color:rgba(246,239,228,.75);max-width:44ch">Najprościej zadzwonić — odbieramy między pracą w sadzie, więc jeśli nie odbierzemy od razu, oddzwonimy.</p>
 
       <ul class="cinfo">
         <li>
-          <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F6C98A" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F6C98A" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div><span>Godziny w sezonie</span><b>niedziela – piątek, 16:00 – 19:00</b><em>W soboty nieczynne</em></div>
+        </li>
+        <li>
+          <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F6C98A" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
           <div><span>Telefon</span><a href="tel:+48500326588">500 326 588</a></div>
         </li>
         <li>
-          <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F6C98A" stroke-width="2.2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F6C98A" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <div><span>Adres</span><b>ul. Tysiąclecia 25<br>62-001 Golęczewo</b></div>
         </li>
         <li>
-          <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F6C98A"><path d="M13 22V12h3l.5-4H13V6c0-1 .3-1.7 1.8-1.7H17V.8C16.6.7 15.4.6 14 .6c-2.9 0-4.9 1.8-4.9 5V8H6v4h3.1v10H13z"/></svg></div>
+          <div class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="#F6C98A" aria-hidden="true"><path d="M13 22V12h3l.5-4H13V6c0-1 .3-1.7 1.8-1.7H17V.8C16.6.7 15.4.6 14 .6c-2.9 0-4.9 1.8-4.9 5V8H6v4h3.1v10H13z"/></svg></div>
           <div><span>Facebook</span><a href="https://www.facebook.com/SadPodWiatrakiem" target="_blank" rel="noopener">Sad Pod Wiatrakiem</a></div>
         </li>
       </ul>
+
+      <div class="drive">
+        <h3>Ile do nas jechać</h3>
+        <ul>
+          <li><span>Poznań (centrum)</span><b>ok. 15 min</b></li>
+          <li><span>Suchy Las</span><b>ok. 10 min</b></li>
+          <li><span>Rokietnica</span><b>ok. 12 min</b></li>
+          <li><span>Oborniki</span><b>ok. 20 min</b></li>
+        </ul>
+        <small>Czasy orientacyjne, samochodem, poza godzinami szczytu.</small>
+      </div>
     </div>
 
     <div class="map rv">
-      <svg viewBox="0 0 520 340" preserveAspectRatio="xMidYMid slice" aria-label="Szkic mapy dojazdu">
+      <svg viewBox="0 0 520 340" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Szkic mapy dojazdu do sadu">
         <rect width="520" height="340" fill="#2A211B"/>
         <g stroke="#4A3B31" stroke-width="1" opacity=".7">
           <path d="M0,60 H520 M0,130 H520 M0,200 H520 M0,270 H520 M80,0 V340 M180,0 V340 M300,0 V340 M420,0 V340"/>
@@ -674,7 +839,6 @@ footer{background:#231A15;color:rgba(246,239,228,.65);padding:3rem 0 2.5rem;font
         <path d="M180,340 C196,250 240,190 300,150 C350,116 420,110 480,96" stroke="#8A7159" stroke-width="6" fill="none"/>
         <text x="24" y="240" fill="#8C7A68" font-size="11" font-family="Karla,sans-serif" letter-spacing="1.5">DK92 / POZNAŃ</text>
         <text x="200" y="320" fill="#8C7A68" font-size="11" font-family="Karla,sans-serif" letter-spacing="1.5">SUCHY LAS</text>
-        <!-- pin -->
         <g transform="translate(300,150)">
           <circle r="30" fill="#96161C" opacity=".18"/>
           <circle r="17" fill="#96161C" opacity=".3"/>
@@ -686,7 +850,7 @@ footer{background:#231A15;color:rgba(246,239,228,.65);padding:3rem 0 2.5rem;font
       </svg>
       <div class="map-foot">
         <small>Szkic poglądowy — dokładna nawigacja w mapach</small>
-        <a href="https://www.google.com/maps/search/?api=1&query=Tysi%C4%85clecia%2025%2C%2062-001%20Gol%C4%99czewo" target="_blank" rel="noopener">Otwórz w Google Maps →</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Tysi%C4%85clecia%2025%2C%2062-001%20Gol%C4%99czewo" target="_blank" rel="noopener">Nawiguj do sadu →</a>
       </div>
     </div>
   </div>
@@ -703,109 +867,236 @@ footer{background:#231A15;color:rgba(246,239,228,.65);padding:3rem 0 2.5rem;font
   </div>
 </footer>
 
+<!-- sticky action bar (mobile only) -->
+<nav class="dock" aria-label="Szybkie działania">
+  <a class="btn btn-primary" href="tel:+48500326588">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Zadzwoń
+  </a>
+  <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=Tysi%C4%85clecia%2025%2C%2062-001%20Gol%C4%99czewo" target="_blank" rel="noopener">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Nawiguj
+  </a>
+</nav>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
+  <button class="lb-close" id="lbClose" aria-label="Zamknij">✕</button>
+  <img id="lbImg" alt="">
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"GroceryStore",
+  "name":"Sad Pod Wiatrakiem",
+  "description":"Rodzinny sad wiśniowo-brzoskwiniowy w Golęczewie pod Poznaniem. Trzy odmiany wiśni i pięć odmian brzoskwiń, sprzedaż bezpośrednia w sezonie.",
+  "url":"https://naxvb.github.io/sad-web/",
+  "image":"https://naxvb.github.io/sad-web/img/brzoskwinia-na-drzewie-1600.jpg",
+  "telephone":"+48500326588",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"ul. Tysiąclecia 25",
+    "addressLocality":"Golęczewo",
+    "postalCode":"62-001",
+    "addressRegion":"wielkopolskie",
+    "addressCountry":"PL"
+  },
+  "areaServed":["Poznań","Suchy Las","Rokietnica","Oborniki"],
+  "openingHoursSpecification":[{
+    "@type":"OpeningHoursSpecification",
+    "dayOfWeek":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens":"16:00",
+    "closes":"19:00"
+  }],
+  "sameAs":["https://www.facebook.com/SadPodWiatrakiem"],
+  "makesOffer":[
+    {"@type":"Offer","itemOffered":{"@type":"Product","name":"Wiśnie (Nefris, Panda, Łutówka)"}},
+    {"@type":"Offer","itemOffered":{"@type":"Product","name":"Brzoskwinie (Harnaś, Redhaven, Royal, Inka, Flaming)"}}
+  ]
+}
+</script>
+
 <script>
 (function(){
-  /* ---- windmill rotors: generate blades ---- */
-  function blades(target, n, len, w, color){
-    var el = document.getElementById(target);
+  'use strict';
+
+  /* =====================================================================
+     DANE SADU — jedyne miejsce do edycji treści zmiennych.
+     ---------------------------------------------------------------------
+     CENY: dopóki jest `null`, sekcja "Ceny" pokazuje wariant
+     "cena podawana telefonicznie". Żeby włączyć pełny cennik, zamień
+     `ceny: null` na przykład na:
+
+       ceny: [
+         ['Wiśnie', '9 zł / kg'],
+         ['Brzoskwinie', '14 zł / kg'],
+         ['Skrzynka wiśni 10 kg', '80 zł']
+       ],
+
+     ...i tabela pojawi się automatycznie.
+     ===================================================================== */
+  var DANE = {
+    telefon: '500 326 588',
+    godziny: { odDnia: 0, doDnia: 5, od: 16, do: 19 },   // 0 = niedziela ... 5 = piątek
+    sezon:   { odMies: 6, doMies: 9 },
+    ceny: null
+  };
+
+  var $  = function(s){ return document.querySelector(s); };
+  var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+
+  /* ---- windmill rotor blades ---- */
+  function blades(id, n, len, w, color, cx, cy){
+    var el = document.getElementById(id);
     if(!el) return;
     var s = '';
     for(var i=0;i<n;i++){
-      var a = (360/n)*i;
-      s += '<path d="M0,0 L'+len+',-'+w+' L'+len+','+w+' Z" transform="rotate('+a+')" fill="'+color+'"/>';
+      s += '<path d="M0,0 L'+len+',-'+w+' L'+len+','+w+' Z" transform="rotate('+((360/n)*i)+')" fill="'+color+'"/>';
     }
-    el.innerHTML = '<g transform="translate(50,'+ (target==='bladeset' ? 40 : 108) +')">'+s+'</g>';
+    el.innerHTML = '<g transform="translate('+cx+','+cy+')">'+s+'</g>';
   }
-  blades('bladeset', 18, 15, 2.2, '#221A15');
-  blades('heroRotor', 18, 42, 6, '#3A2C23');
-  blades('frameRotor', 18, 40, 6, '#4A382C');
+  blades('bladeset',   18, 15, 2.2, '#221A15', 50, 40);
+  blades('frameRotor', 18, 40, 6,   '#4A382C', 50, 108);
 
-  /* ---- hero tree row ---- */
-  var row = document.getElementById('treeRow');
-  if(row){
-    var t='';
-    for(var i=0;i<26;i++){
-      var x = 20 + i*58 + (i%3)*6;
-      var y = 336 + Math.sin(i*0.8)*7;
-      var r = 15 + (i%4)*2;
-      t += '<g opacity="'+(0.55+(i%3)*0.15)+'"><rect x="'+(x-1.6)+'" y="'+y+'" width="3.2" height="20" fill="#3A4A2A"/><circle cx="'+x+'" cy="'+y+'" r="'+r+'"/></g>';
-    }
-    row.innerHTML = t;
-  }
+  /* ---- season calendar ---- */
+  var MIES = ['Sty','Lut','Mar','Kwi','Maj','Cze','Lip','Sie','Wrz','Paź','Lis','Gru'];
+  var teraz = new Date();
+  var mies  = teraz.getMonth() + 1;
 
-  /* ---- gallery placeholder tiles ---- */
-  var tiles = [
-    {label:'Kwitnienie · maj', bg:['#F6E7EF','#EBD3DE'], kind:'blossom'},
-    {label:'Wiśnie · lipiec', bg:['#F7E0DC','#E9C3BC'], kind:'cherry'},
-    {label:'Zbiory', bg:['#EDEFDB','#DCE0C0'], kind:'basket'},
-    {label:'Brzoskwinie', bg:['#FBEBD5','#F3D6AE'], kind:'peach'},
-    {label:'Wiatrak o zmierzchu', bg:['#EFE1CE','#DCC7AC'], kind:'mill'},
-    {label:'Skrzynki na stole', bg:['#E8EAE0','#D5D9C7'], kind:'crate'}
-  ];
-  var art = {
-    blossom:'<circle cx="100" cy="100" r="34" fill="#fff" opacity=".7"/><g fill="#E8A9BF"><circle cx="100" cy="76" r="15"/><circle cx="124" cy="100" r="15"/><circle cx="100" cy="124" r="15"/><circle cx="76" cy="100" r="15"/></g><circle cx="100" cy="100" r="9" fill="#E39A45"/>',
-    cherry:'<path d="M100 62 C104 82 116 88 124 96" stroke="#4E6A43" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M100 62 C96 82 84 88 76 96" stroke="#4E6A43" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="76" cy="116" r="21" fill="#96161C"/><circle cx="124" cy="116" r="21" fill="#7E1116"/>',
-    basket:'<path d="M62 96 h76 l-9 46 h-58 Z" fill="#B98A52"/><path d="M62 96 a38 38 0 0 1 76 0" fill="none" stroke="#8C6636" stroke-width="5"/><circle cx="86" cy="112" r="9" fill="#96161C"/><circle cx="108" cy="118" r="9" fill="#7E1116"/><circle cx="120" cy="106" r="8" fill="#96161C"/>',
-    peach:'<circle cx="100" cy="108" r="36" fill="#E39A45"/><path d="M100 72 a36 36 0 0 0 0 72 a26 36 0 0 1 0-72" fill="#D9832F" opacity=".5"/><path d="M100 72 C102 60 110 54 118 54 C116 66 108 72 100 72 Z" fill="#5E7A4A"/>',
-    mill:'<circle cx="140" cy="66" r="24" fill="#F0C489" opacity=".8"/><path d="M92 96 L84 160 M108 96 L116 160 M90 118 L110 118 M88 138 L112 138" stroke="#6B5442" stroke-width="4" fill="none" stroke-linecap="round"/><g transform="translate(100,94)" fill="#6B5442"><path d="M0,0 L28,-4 L28,4 Z"/><path d="M0,0 L-28,-4 L-28,4 Z"/><path d="M0,0 L-4,-28 L4,-28 Z"/><path d="M0,0 L-4,28 L4,28 Z"/><path d="M0,0 L20,-20 L24,-14 Z"/><path d="M0,0 L-20,20 L-24,14 Z"/><path d="M0,0 L20,20 L14,24 Z"/><path d="M0,0 L-20,-20 L-14,-24 Z"/></g>',
-    crate:'<rect x="52" y="98" width="96" height="52" rx="5" fill="#C79A62"/><g stroke="#A87B44" stroke-width="3"><path d="M52 116 h96 M52 132 h96"/></g><circle cx="76" cy="92" r="12" fill="#96161C"/><circle cx="100" cy="88" r="12" fill="#7E1116"/><circle cx="124" cy="92" r="12" fill="#96161C"/>'
-  };
-  var g = document.getElementById('gallery');
-  if(g){
-    g.innerHTML = tiles.map(function(t,i){
-      return '<figure class="tile" style="margin:0">'+
-        '<svg viewBox="0 0 200 200" aria-hidden="true">'+
-          '<defs><linearGradient id="tg'+i+'" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="'+t.bg[0]+'"/><stop offset="100%" stop-color="'+t.bg[1]+'"/></linearGradient></defs>'+
-          '<rect width="200" height="200" fill="url(#tg'+i+')"/>'+ art[t.kind] +
-        '</svg>'+
-        '<figcaption class="tile-label">'+t.label+'</figcaption>'+
-      '</figure>';
+  $$('.months').forEach(function(row){
+    var on = row.dataset.on.split(',').map(Number);
+    var pe = row.dataset.fruit === 'peach';
+    row.innerHTML = MIES.map(function(nazwa, i){
+      var m = i + 1;
+      var cls = 'mo' + (on.indexOf(m) > -1 ? ' on' + (pe ? ' pe' : '') : '') + (m === mies ? ' now' : '');
+      return '<span class="' + cls + '" title="' + nazwa + '">' + nazwa + '</span>';
     }).join('');
-  }
+  });
 
-  /* ---- current month highlight ---- */
-  var now = new Date();
-  var m = now.getMonth()+1;
-  var mEl = document.querySelector('.season-grid .m[data-m="'+m+'"]');
-  if(mEl) mEl.classList.add('now');
-  var y = document.getElementById('yr'); if(y) y.textContent = now.getFullYear();
+  /* ---- co teraz dojrzewa ---- */
+  var SEZON = {
+    5:  { t:'Sad kwitnie',                 p:'Drzewa właśnie przekwitły albo jeszcze kwitną. Pierwsze wiśnie zrywamy zwykle pod koniec czerwca — zadzwoń, powiemy, jak zapowiada się sezon.', c:[] },
+    6:  { t:'Zaczynają się wiśnie',        p:'Sezon otwiera Nefris — ciemna, soczysta i wyraźnie kwaśna. Zaraz po niej wchodzi Panda.', c:[['Nefris',''],['Panda','']] },
+    7:  { t:'Wiśnie i pierwsze brzoskwinie', p:'Najbogatszy moment sezonu: kończą się wiśnie, a zaczynają wczesne brzoskwinie. Dobry czas na przetwory.', c:[['Panda',''],['Łutówka',''],['Harnaś','pe'],['Redhaven','pe']] },
+    8:  { t:'Pełnia sezonu brzoskwiń',     p:'Na drzewach są duże, słodkie odmiany — Royal i Inka. Zrywamy je dojrzałe, więc najlepiej zjeść albo przerobić w ciągu kilku dni.', c:[['Royal','pe'],['Inka','pe']] },
+    9:  { t:'Ostatnie brzoskwinie',        p:'Sezon zamyka Flaming — nasza najpóźniejsza odmiana. Zadzwoń przed przyjazdem, bo owoców jest z każdym tygodniem mniej.', c:[['Flaming','pe']] },
+    off:{ t:'Poza sezonem',                p:'Teraz w sadzie trwa praca przy drzewach. Wracamy z owocami w czerwcu — a jeśli masz pytanie o odmiany albo o większe zamówienie, dzwoń o każdej porze roku.', c:[] }
+  };
+  var s = SEZON[mies] || SEZON.off;
+  $('#nowTitle').textContent = s.t;
+  $('#nowText').textContent  = s.p;
+  $('#nowChips').innerHTML = s.c.length
+    ? s.c.map(function(x){ return '<span class="chip ' + x[1] + '">' + x[0] + '</span>'; }).join('')
+    : '<span class="chip mute">Sprzedaż wraca w czerwcu</span>';
 
-  /* ---- hero season note ---- */
-  var note = document.querySelector('.hero-note');
-  if(note){
-    var txt = 'Poza sezonem — zadzwoń, chętnie odpowiemy na pytania';
-    if(m===6) txt = 'Trwa sezon na wiśnie — dzwoń po świeże owoce';
-    else if(m===7) txt = 'Wiśnie i pierwsze brzoskwinie — sezon w pełni';
-    else if(m===8) txt = 'Sezon brzoskwiń w pełni — zapraszamy do sadu';
-    else if(m===9) txt = 'Ostatnie brzoskwinie — zadzwoń i sprawdź dostępność';
-    else if(m===5) txt = 'Sad kwitnie — pierwsze wiśnie już niedługo';
-    note.innerHTML = '<span class="dot"></span> ' + txt;
-  }
+  /* ---- otwarte / zamknięte teraz ---- */
+  (function(){
+    var g = DANE.godziny, pill = $('#statusPill'), label = $('#statusLabel'), note = $('#statusNote');
+    var dzien = teraz.getDay();                       // 0 = niedziela
+    var minuty = teraz.getHours()*60 + teraz.getMinutes();
+    var wSezonie = mies >= DANE.sezon.odMies && mies <= DANE.sezon.doMies;
+    var otwartyDzien = dzien >= g.odDnia && dzien <= g.doDnia;   // niedziela–piątek
+    var stan, tekst, uwaga;
+
+    if(!wSezonie){
+      stan = 'is-off';
+      tekst = 'Poza sezonem — sprzedaż wraca w czerwcu';
+      uwaga = 'W sezonie otwieramy od niedzieli do piątku, 16:00–19:00. Telefon działa cały rok.';
+    } else if(!otwartyDzien){
+      stan = 'is-closed';
+      tekst = 'Dziś nieczynne — sobota';
+      uwaga = 'Zapraszamy jutro od 16:00. Soboty to jedyny dzień, w którym sad jest zamknięty.';
+    } else if(minuty < g.od*60){
+      stan = 'is-soon';
+      tekst = 'Dziś otwieramy o ' + g.od + ':00';
+      uwaga = 'Czynne codziennie oprócz soboty, w godzinach ' + g.od + ':00–' + g.do + ':00.';
+    } else if(minuty < g.do*60){
+      stan = 'is-open';
+      tekst = 'Otwarte teraz — do ' + g.do + ':00';
+      uwaga = 'Zadzwoń przed przyjazdem, powiemy, co dziś zeszło z drzew.';
+    } else {
+      stan = 'is-closed';
+      tekst = 'Dziś już zamknięte';
+      uwaga = (dzien === 5)
+        ? 'W sobotę nieczynne — zapraszamy w niedzielę od 16:00.'
+        : 'Zapraszamy jutro od ' + g.od + ':00.';
+    }
+    pill.className = 'pill ' + stan;
+    label.textContent = tekst;
+    note.textContent = uwaga;
+  })();
+
+  /* ---- cennik (renderowany tylko, gdy podano ceny) ---- */
+  (function(){
+    if(!DANE.ceny || !DANE.ceny.length) return;
+    $('#cenyTitle').textContent = 'Ceny w tym sezonie';
+    $('#cenyBody').innerHTML =
+      '<p>Ceny orientacyjne — przy większych ilościach na przetwory ustalamy je indywidualnie.</p>' +
+      '<ul class="price-list">' +
+        DANE.ceny.map(function(r){ return '<li><span>' + r[0] + '</span><b>' + r[1] + '</b></li>'; }).join('') +
+      '</ul>';
+  })();
+
+  /* ---- galeria ---- */
+  var ZDJECIA = [
+    ['wisnie-na-galezi',      'Wiśnie na gałęzi tuż przed zbiorem'],
+    ['brzoskwinia-na-drzewie','Dojrzała brzoskwinia na drzewie'],
+    ['wisnie-skrzynka',       'Skrzynka pełna świeżo zerwanych wiśni'],
+    ['brzoskwinie-skrzynki',  'Skrzynki brzoskwiń gotowe do sprzedaży'],
+    ['brzoskwinie-zolte',     'Żółte brzoskwinie w skrzynkach']
+  ];
+  $('#gal').innerHTML = ZDJECIA.map(function(z){
+    return '<button type="button" data-full="img/' + z[0] + '-1600.jpg" aria-label="Powiększ: ' + z[1] + '">' +
+      '<img src="img/' + z[0] + '-800.jpg" alt="' + z[1] + '" loading="lazy" width="800" height="600">' +
+    '</button>';
+  }).join('');
+
+  /* ---- lightbox ---- */
+  var lb = $('#lb'), lbImg = $('#lbImg');
+  function zamknij(){ lb.classList.remove('on'); lbImg.removeAttribute('src'); }
+  $('#gal').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-full]');
+    if(!b) return;
+    lbImg.src = b.dataset.full;
+    lbImg.alt = b.querySelector('img').alt;
+    lb.classList.add('on');
+  });
+  $('#lbClose').addEventListener('click', zamknij);
+  lb.addEventListener('click', function(e){ if(e.target === lb) zamknij(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') zamknij(); });
 
   /* ---- header shadow ---- */
-  var hdr = document.getElementById('hdr');
+  var hdr = $('#hdr');
   var onScroll = function(){ hdr.classList.toggle('stuck', window.scrollY > 8); };
-  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive:true });
 
   /* ---- mobile nav ---- */
-  var burger = document.getElementById('burger'), links = document.getElementById('navLinks');
+  var burger = $('#burger'), links = $('#navLinks');
   burger.addEventListener('click', function(){
     var open = links.classList.toggle('open');
     burger.classList.toggle('open', open);
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
   links.addEventListener('click', function(e){
-    if(e.target.tagName === 'A'){ links.classList.remove('open'); burger.classList.remove('open'); }
+    if(e.target.tagName === 'A'){ links.classList.remove('open'); burger.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
   });
 
+  /* ---- rok w stopce ---- */
+  $('#yr').textContent = teraz.getFullYear();
+
   /* ---- reveal on scroll ---- */
+  if(!('IntersectionObserver' in window)){
+    $$('.rv').forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
     });
-  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('.rv').forEach(function(el,i){
-    el.style.transitionDelay = (i%4)*70 + 'ms';
+  }, { threshold:.08, rootMargin:'0px 0px -30px 0px' });
+  $$('.rv').forEach(function(el,i){
+    el.style.transitionDelay = (i % 3) * 60 + 'ms';
     io.observe(el);
   });
 })();
