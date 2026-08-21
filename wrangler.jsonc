@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers "Static Assets" — deploys the static Vite build (dist/) with no Vite
+  // plugin. SPA-fallback: unmatched paths → index.html (client-side routing).
+  // NOTE: "name" must match the project name in the Cloudflare dashboard.
+  // Rename this from "agentic-app-starter" to your project's name.
+  "name": "agentic-app-starter",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}

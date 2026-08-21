@@ -1,0 +1,16 @@
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+!.env.example
+
+# editor / OS
+.DS_Store
+*.log
+
+# Claude Code local, per-machine bookkeeping
+.claude/.active-issue
+.claude/settings.local.json
+.superpowers/
